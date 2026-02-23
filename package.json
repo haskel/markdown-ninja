@@ -2,7 +2,7 @@
   "name": "markdown-ninja",
   "displayName": "Markdown Ninja",
   "description": "Notion-like WYSIWYG editor for Markdown files with slash commands, callouts, and auto-save",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "publisher": "markdownninja",
   "author": {
     "name": "YOUR_NAME"
@@ -37,7 +37,9 @@
     "md",
     "preview"
   ],
-  "activationEvents": [],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
   "main": "./dist/extension.js",
   "contributes": {
     "customEditors": [
