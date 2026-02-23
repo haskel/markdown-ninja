@@ -1,0 +1,101 @@
+{
+  "name": "markdown-ninja",
+  "displayName": "Markdown Ninja",
+  "description": "Notion-like WYSIWYG editor for Markdown files with slash commands, callouts, and auto-save",
+  "version": "0.1.0",
+  "publisher": "markdownninja",
+  "author": {
+    "name": "YOUR_NAME"
+  },
+  "license": "MIT",
+  "galleryBanner": {
+    "color": "#1e1e1e",
+    "theme": "dark"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/YOUR_USERNAME/markdown-ninja"
+  },
+  "bugs": {
+    "url": "https://github.com/YOUR_USERNAME/markdown-ninja/issues"
+  },
+  "homepage": "https://github.com/YOUR_USERNAME/markdown-ninja#readme",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other",
+    "Visualization"
+  ],
+  "keywords": [
+    "markdown",
+    "notion",
+    "wysiwyg",
+    "editor",
+    "block editor",
+    "visual editor",
+    "md",
+    "preview"
+  ],
+  "activationEvents": [],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "customEditors": [
+      {
+        "viewType": "blocknoteMarkdown.editor",
+        "displayName": "Markdown Ninja",
+        "selector": [
+          {
+            "filenamePattern": "*.md"
+          },
+          {
+            "filenamePattern": "*.markdown"
+          }
+        ],
+        "priority": "default"
+      }
+    ],
+    "keybindings": [
+      {
+        "key": "cmd+b",
+        "command": "-workbench.action.toggleSidebarVisibility",
+        "when": "activeCustomEditorId == 'blocknoteMarkdown.editor'"
+      },
+      {
+        "key": "cmd+i",
+        "command": "-workbench.action.showHover",
+        "when": "activeCustomEditorId == 'blocknoteMarkdown.editor'"
+      },
+      {
+        "key": "cmd+u",
+        "command": "-cursorUndo",
+        "when": "activeCustomEditorId == 'blocknoteMarkdown.editor'"
+      }
+    ]
+  },
+  "scripts": {
+    "build": "node esbuild.config.mjs",
+    "watch": "node esbuild.config.mjs --watch",
+    "package": "vsce package --no-dependencies",
+    "prepublish": "npm run build",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@types/react": "^18.2.48",
+    "@types/react-dom": "^18.2.18",
+    "@types/vscode": "^1.85.0",
+    "esbuild": "^0.20.0",
+    "typescript": "^5.3.3",
+    "vitest": "^4.0.18"
+  },
+  "dependencies": {
+    "@blocknote/core": "^0.46.2",
+    "@blocknote/mantine": "^0.46.2",
+    "@blocknote/react": "^0.46.2",
+    "@mantine/core": "^8.3.11",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  }
+}

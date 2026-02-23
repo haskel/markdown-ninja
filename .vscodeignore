@@ -1,0 +1,36 @@
+# Source files (compiled to dist/)
+src/**
+
+# Development files
+.vscode/**
+.claude/**
+node_modules/**
+
+# Config files
+tsconfig.json
+tsconfig.webview.json
+esbuild.config.mjs
+vitest.config.ts
+.gitignore
+
+# Test files
+test.md
+test-alerts.md
+test_debug_page.py
+debug.html
+**/*.test.ts
+**/*.spec.ts
+
+# Build artifacts
+*.map
+dist/webview/*.map
+dist/*.map
+
+# Documentation (keep README, CHANGELOG, LICENSE)
+PLAN.md
+CLAUDE.md
+docs/**
+
+# Other
+.DS_Store
+*.vsix
